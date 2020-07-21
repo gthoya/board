@@ -44,11 +44,16 @@ public class TestController {
     @GetMapping("/test/mybatis/{id}")
     @ResponseBody
     public Test testMybatis(@PathVariable Integer id) {
-       return testMybatisDao.selectTest(id);
+        Test test = testMybatisDao.selectTest(id);
+        if (test == null) {
+            return new Test();
+        }
+
+        return test;
     }
 
     @GetMapping("/test/thymeleaf/{id}")
-    public String testThymelaf(Model model, @PathVariable Integer id) {
+    public String testThymeleaf(Model model, @PathVariable Integer id) {
         model.addAttribute(this.testJpa(id));
         return "test";
     }

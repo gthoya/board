@@ -10,11 +10,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
 @Configuration
 @RequiredArgsConstructor
+@PropertySource("classpath:/jdbc.properties")
 public class DataSourceConfig {
     private final ApplicationContext applicationContext;
 
