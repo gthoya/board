@@ -16,7 +16,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @RequiredArgsConstructor
-@PropertySource("classpath:/jdbc.properties")
 public class DataSourceConfig {
     private final ApplicationContext applicationContext;
 

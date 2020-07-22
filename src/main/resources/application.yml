@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/board?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: oopstudy
+      password: oopstudy
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        enable_lazy_load_no_trans: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        format_sql: true
