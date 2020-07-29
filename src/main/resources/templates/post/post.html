@@ -2,9 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Post 등록</title>
+    <title>Post</title>
 </head>
 <body>
-<h1>Post 등록</h1>
+<h1>Post</h1>
+<span th:text="${post.postSeq}"></span><br/>
+<span th:text="${post.title}"></span><br/>
+<span th:text="${post.content}"></span><br/>
+<span th:text="${post.createUserSeq}"></span><br/>
+<span th:text="${post.createAt}"></span><br/>
+
+<script th:src="@{/js/jquery/jquery.min.js}"></script>
+<script th:src="@{/js/post/post.js}"></script>
 </body>
 </html>

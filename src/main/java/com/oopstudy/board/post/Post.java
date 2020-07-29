@@ -1,13 +1,11 @@
 package com.oopstudy.board.post;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
 @Entity
 @Getter
 @NoArgsConstructor
@@ -36,4 +34,12 @@ public class Post {
 
     @Column
     private Integer modifyUserSeq;
+
+    public Post(String title, String content, PostStatus postStatus, Integer createUserSeq) {
+        this.title = title;
+        this.content = content;
+        this.postStatus = postStatus;
+        this.createAt = LocalDateTime.now();
+        this.createUserSeq = createUserSeq;
+    }
 }
