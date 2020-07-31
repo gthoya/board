@@ -1,0 +1,17 @@
+### success
+POST http://localhost:8080/user/signup
+Content-Type: application/json
+
+{
+  "address": "otk1090@naver.com"
+}
+
+### fail
+POST http://localhost:8080/user/signup
+Content-Type: application/json
+
+{
+  "address": "otk"
+}
+
+###
