@@ -1,31 +1,31 @@
 package com.oopstudy.board.user.domain;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.oopstudy.board.user.domain.password.Password;
 
 public class User {
     private final Email email;
 
-    /*@JsonIgnore
-    private String password;*/
+    @JsonIgnore
+    private final Password password;
 
-    public User(final Email email) {
+    private final Phone phone;
+
+    public User(final Email email, final Password password, final Phone phone) {
         this.email = email;
+        this.password = password;
+        this.phone = phone;
     }
 
     public Email getEmail() {
         return email;
     }
 
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        final User user = (User) o;
-        return Objects.equals(email, user.email);
+    public Password getPassword() {
+        return password;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(email);
+    public Phone getPhone() {
+        return phone;
     }
 }
